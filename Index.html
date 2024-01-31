@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="Viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Portfolio</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/88a23eb8b4.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="header">
+            <div class="container">
+                <nav class="navbar">
+                    <ul id="sidemenu">
+                        <li><a href="#header">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#project">Project</a></li>
+                        <li><a href="#Contacts">Contact</a></li>
+                        <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                    </ul>
+                    <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+                </nav>
+                <div class="header-text">
+                    <p>Graduate Student</p>
+                    <h1>Hello, I'm <span>Tống Bảo Lân</span><br>from<span> Hồ Chí Minh </span>city</h1>
+                </div>
+            </div>
+        </div>
+        <!-- -----------about------------ -->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about-col-1">
+                        <img src="assets/Profile-picture-2.jpg" alt="Profile Picture" height="550">
+                    </div>
+                    <div class="about-col-2">
+                        <h1 class="sub-title">About Me</h1><br>
+                        <p>
+                            Hello, my name is Tống Bảo Lân, I'm looking for jobs that related to Software/ Embedded/ Web Developer,  
+                            I'm a hardworking, quick-learning and friendly person, although I'm still lacking some experience but I'm willing to learn new knowledge to improve my skills. 
+                            Thank you for visiting my page.
+                        </p>
+                        <div class="tab-titles">
+                            <p class="tab-links active-link" onclick="opentab('Skills')">Skills</p>
+                            <p class="tab-links" onclick="opentab('Experience')">Experience</p>
+                            <p class="tab-links" onclick="opentab('Education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id="Skills">
+                            <ul>
+                                <li><span>C/C++, Python, C#</span></li>
+                                <li><span>Linux, Docker, Kubernetes</span></li>
+                                <li><span>HTML, CSS, Javascript</span></li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Experience">
+                            <ul>
+                                <li><span>3/2023 - 5/2023</span><br>Software Developer Intern at DEK Technologies Vietnam</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id="Education">
+                            <ul>
+                                <li><span>2019 - 2023</span><br>B.E from Ho Chi Minh city University of Technology and Education</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ---------Project--------- -->
+        <div id="project">
+            <div class="container">
+                <h1 class="sub-title">My Project</h1>
+                <div class="project-list">
+                    <div>
+                        <i class="fa-brands fa-python"></i>
+                        <h2>AI Project</h2>
+                        <p>
+                            Predicting stock market price of Petrolimex company using Python and Recurrent Neural Network
+                        </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-code"></i>
+                        <h2>Graduation Thesis</h2>
+                        <p>
+                            Design and Manufacture 3D printer using clay material. In this project
+                            we will design and create all the necessary components to make a 3D
+                            printer using clay material, we also use MKS Gen L v2.1 board to
+                            control the printer, since the clay material is almost similar to the
+                            plastic one so we will use Marlin firmware to run all the functions of
+                            the printer.
+                        </p>
+                        <a href="#">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----------Contacts---------- -->
+        <div id="Contacts">
+            <div class="btn-container">
+                <div class="contact-left">
+                    <h1 class="contact-title">Contact Info</h1>
+                    <p class="para"><i class="fa-solid fa-envelope"></i> Email: baolantongtbl@gmail.com <br> <i class="fa-solid fa-phone"></i> Phone number: 0906773302</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/baolan.tong.7"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/BaoLanTong"><i class="fa-brands fa-github"></i></i></a>
+                    </div>
+                    <button class="btn" onclick="window.open('./assets/Tong-Bao-Lan-CV.pdf')">Download CV</button>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>Copyright © Lân. </p>
+            </div>
+        </div>
+        
+
+        <script>
+            var tablinks = document.getElementsByClassName("tab-links");
+            var tabcontents = document.getElementsByClassName("tab-contents");
+
+            function opentab(tabname){
+                for(tablink of tablinks){
+                    tablink.classList.remove("active-link");
+                }
+                for(tabcontent of tabcontents){
+                    tabcontent.classList.remove("active-tab");
+                }
+                event.currentTarget.classList.add("active-link");
+                document.getElementById(tabname).classList.add("active-tab");
+            }
+        </script>
+
+        <script>
+            var sidemenu = document.getElementById("sidemenu");
+            function openmenu(){
+                sidemenu.style.right = "0";
+            }
+            function closemenu(){
+                sidemenu.style.right = "-200px"
+            }
+        </script>
+    </body>
+</html>
